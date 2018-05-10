@@ -1,16 +1,18 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const products = require('./seed')
 
+// sending all products for a request to the specified route. The data has been imported from a 'seed' file where the data for this exercise is.
+app.get('/api/products', function (req, res){
+  res.send(products)
+})
 
+// if the URL doesn't match any route, by default it sends the index.html
 app.use(express.static('./public'));
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '/public/index.html'));
 });
-
-//hacer un app.get a '/api/products' para servir la data que me pasaron del challenge. Hago un res.send de la variable PRODUCTS que va a estar importada del archivo SEED al mismo nivel de SERVER.JS
-
-
 
 // error handler
 app.use(function (err, req, res, next) {

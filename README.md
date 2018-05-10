@@ -1,4 +1,3 @@
-
 # Garbarino App
 
 This is a Front End project to test Javascript skills and App structuring. The project should display a given list of products and its information.
@@ -22,6 +21,4 @@ npm start
 
 ## Author
 
-* **Diego Ferrari** (https://github.com/dieferrari)
-
-
+**Diego Ferrari** (https://github.com/dieferrari)
