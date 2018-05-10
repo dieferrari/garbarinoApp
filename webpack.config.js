@@ -6,6 +6,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -15,6 +16,14 @@ module.exports = {
         query: {
           presets: ['react', 'env']
         }
+      },
+      {
+        test: /\.scss$/,
+        loader: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader?name=./assets/[name].[ext]',
       },
     ]
   }
